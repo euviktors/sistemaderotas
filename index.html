@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Visitas</title>
+    <link rel="icon" type="image/jpeg" href="/src/favicon/fav_redondo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwdM3imaSXXe162XCrL0ddhVguBjfcBqE&libraries=places"
+        onload="initMap()" async defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Inputs para os dados do formulário -->
+        <label for="consultorNome">Nome do Consultor:</label>
+        <input type="text" id="consultorNome" placeholder="Digite o nome do consultor">
+
+        <label for="data">Data:</label>
+        <input type="date" id="data">
+
+        <label for="origem">Nome da Origem:</label>
+        <input type="text" id="origem" placeholder="Clique em 'Puxar Localização' para obter a coordenada">
+        <button id="puxarLocalizacao" onclick="obterCoordenada()">Puxar Localização</button>
+
+        <label for="destino">Nome da Empresa (Destino):</label>
+        <select id="destino">
+            <option value="Compos">Compos</option>
+            <option value="FarolBarra">Farol da Barra</option>
+            <option value="FarolItapuan">Farol de Itapuã</option>
+            <option value="ShoppingBahia">Shopping da Bahia</option>
+            <option value="ShoppingParalela">Shopping Paralela</option>
+            <option value="SalvadorShopping">Salvador Shopping</option>
+        </select>
+
+        <!-- Input oculto para o horário de início da visita -->
+        <input type="hidden" id="horarioInicio" name="horarioInicio">
+
+        <!-- Botões -->
+        <button id="iniciarVisita" onclick="iniciarVisita()">Iniciar Visita</button>
+        <button id="chegueiDestino" onclick="chegouAoDestino()">Cheguei ao Destino</button>
+        <button id="visitaFinalizada" onclick="visitaFinalizada()">Visita Finalizada</button>
+
+        <!-- Resultado -->
+        <div id="resultado"></div>
+    </div>
+
+    <!-- Nova Div para o mapa à direita -->
+    <div id="mapaContainer" class="mapa-container">
+        <div id="mapa"></div>
+    </div>
+
+    <script src="clientes.js"></script>
+    <script src="index.js"></script>
+
+    <footer>
+        <p class="footer">algo</p>
+    </footer>
+</body>
+
+</html>

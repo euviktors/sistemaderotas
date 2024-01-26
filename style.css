@@ -1,8 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 0;
-    display: flex;
+    /*margin: 0;*/
+    /* display: flex;*/
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -14,6 +14,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 33%;
+    margin-top: 160px;
+
 }
 
 label {
@@ -41,12 +43,16 @@ button:hover {
     background-color: #45a049;
 }
 
+/*layout para ficar responsivo em telas grandes  ( computadores acima de 1080px )*/
 #mapa {
-    margin-top: 20px;
+    margin-top: -90%;
     height: 0;
-    /* A altura será ajustada dinamicamente */
     transition: height 0.5s;
     margin-left: 57px;
+    width: 500px;
+    height: 433px;
+    border: solid 2px;
+    border-radius: 20px;
 }
 
 #resultado {
@@ -59,9 +65,43 @@ button:hover {
     /* Ajuste conforme necessário */
 }
 
-@media (max-width: 768px) {
+.footer {
+    display: none;
+    margin-top: 15px;
+}
+
+
+/*layout para ficar responsivo em telas menores ( celulares abaixo de)*/
+@media (max-width: 860px) {
+
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 75%;
+        margin-top: 7%;
+        margin-left: 2%;
+    }
+
     .mapa-container {
         float: none;
         width: 100%;
+        height: auto;
+        /* Certifique-se de que o contêiner tenha uma altura suficiente para acomodar o espaçamento */
+        margin-bottom: 4%;
+        /* Adicione um espaçamento entre o mapa e a parte inferior do contêiner */
+    }
+
+    #mapa {
+        margin-top: 8%;
+        transition: height 0.5s;
+        margin-left: 13px;
+        border: solid 2px;
+        border-radius: 20px;
+        width: 334px;
+        min-height: 100px;
+        /* Ou ajuste conforme necessário */
     }
 }

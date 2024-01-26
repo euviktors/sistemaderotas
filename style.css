@@ -10,9 +10,10 @@ body {
 
 .container {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 33%;
 }
 
 label {
@@ -24,7 +25,7 @@ input,
 select,
 button {
     margin-bottom: 16px;
-    width: 100%;
+    width: 96%;
     padding: 8px;
 }
 
@@ -38,4 +39,29 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+#mapa {
+    margin-top: 20px;
+    height: 0;
+    /* A altura será ajustada dinamicamente */
+    transition: height 0.5s;
+    margin-left: 57px;
+}
+
+#resultado {
+    margin-top: 20px;
+}
+
+.mapa-container {
+    float: right;
+    width: 50%;
+    /* Ajuste conforme necessário */
+}
+
+@media (max-width: 768px) {
+    .mapa-container {
+        float: none;
+        width: 100%;
+    }
 }
